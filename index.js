@@ -3,6 +3,7 @@
 // Install EJS in Terminal
 
 const express = require("express");
+const { connect } = require("http2");
 const mongoose = require("mongoose");
 
 const app = express();
@@ -16,7 +17,9 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 // Set the view engine
-
+async function startServer(){
+  await mongoose connect("mongodb+srv://SE12:CSH2025@sophia2107.tpz8y.mongodb.net/?retryWrites=true&w=majority&appName=Sophia2107")
+}
 
 // Define the schema for a planet called planetSchema
 // Add the following attributes
